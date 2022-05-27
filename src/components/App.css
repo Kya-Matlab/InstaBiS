@@ -1,0 +1,131 @@
+/* Styles go here */
+body {
+  width: 100%;
+  color: white;
+  background-color: black;
+}
+.content:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+.content1:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  align: top;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  color: white;
+}
+tr:hover {
+  background-color: black;
+}
+.head {
+  font-size: 30px;
+  text-align: center;
+  background-color: #6495ed;
+  color: #191970;
+
+  padding: 40px;
+}
+.content {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  z-index: 0;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.content1 {
+  position: fixed;
+  overflow: scroll;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.container {
+  position: relative;
+
+  color: white;
+  /*Note, you can change the color to your choice depending on your 
+    image and what color blends with it*/
+}
+
+.container::after {
+  content: "";
+  opacity: 0.8;
+  background: rgb(26, 31, 41) url("C:\Users\Rithik\Desktop\Blockchain1.jpg")
+    no-repeat fixed top;
+  background-blend-mode: luminosity;
+  /* also change the blend mode to what suits you, from darken, to other 
+    many options as you deem fit*/
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+  height: 1000px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  height: 70px;
+}
+table,
+td,
+th {
+  border: 1px solid white;
+
+  margin-top: 0px;
+  color: white;
+  font-size: large;
+}
+
+table {
+  border-collapse: collapse;
+}
