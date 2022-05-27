@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import N from './N'
 import N2 from './N copy'
 import Addp from './addp'
+
 import Home from './Home'
 import Layout from "./Layout";
 import Root from "./search";
