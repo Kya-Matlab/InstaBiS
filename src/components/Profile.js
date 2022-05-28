@@ -9,11 +9,7 @@ class Profile extends Component {
         <div className="addp-container">
           <div>
             <h1 className="page-head"> Edit Profile : </h1>
-            <form
-              onSubmit={async (event) => {
-                event.preventDefault();
-              }}
-            >
+            <form onSubmit={async (event) => {}}>
               <div className="prod-name-div">
                 <label>Name</label>
                 <input

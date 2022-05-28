@@ -1,4 +1,4 @@
-import Style from "./App.css";
+import "./App.css";
 import Web3 from "web3";
 import mark from "../abis/market.json";
 import React, { Component } from "react";
@@ -70,7 +70,8 @@ class Main extends Component {
           <div>
             <div style={Header}>
               <h2>Available Products</h2>
-              <table className="table" style={Header}>
+              <div style={{ display: "flex" }}>
+                {/* <table className="table" style={Header}>
                 <thead>
                   <tr>
                     <th scope="col"># Product Id</th>
@@ -80,25 +81,35 @@ class Main extends Component {
                     <th scope="col"></th>
                   </tr>
                 </thead>
-                <tbody id="productList">
-                  {this.props.products.map((product, key) => {
-                    if (
-                      product.purchased !== true &&
-                      product.owner != this.state.account
-                    ) {
-                      return (
-                        <tr key={key}>
-                          <th scope="row">{product.id.toString()}</th>
-                          <td>{product.name}</td>
-                          <td>
+                <tbody id="productList"> */}
+                {this.props.products.map((product, key) => {
+                  if (
+                    product.purchased !== true &&
+                    product.owner != this.state.account
+                  ) {
+                    return (
+                      <div className="card">
+                        <img
+                          src={product.img}
+                          style={{ height: "200px" }}
+                          alt=".."
+                        />
+                        <div className="card-body">
+                          <h2>{product.name}</h2>
+                          <p>{product.desc}</p>
+                          <p style={{ color: "black", fontSize: "12px" }}>
+                            {" "}
+                            Seller : {product.owner}
+                          </p>
+                          <p>
+                            Price:{" "}
                             {window.web3.utils.fromWei(
                               product.price.toString(),
                               "Ether"
                             )}{" "}
-                            Eth
-                          </td>
-                          <td>{product.owner}</td>
-                          <td>
+                            ETH
+                          </p>
+                          <p style={{ textAlign: "center" }}>
                             {!product.purchased ? (
                               <button
                                 name={product.id}
@@ -115,13 +126,29 @@ class Main extends Component {
                             ) : (
                               <td>Sold out</td>
                             )}
-                          </td>
-                        </tr>
-                      );
-                    }
-                  })}
-                </tbody>
-              </table>
+                          </p>
+                        </div>
+                      </div>
+                      // <tr key={key}>
+                      //   <th scope="row">{product.id.toString()}</th>
+                      //   <td>{product.name}</td>
+                      //   <td>
+                      //     {window.web3.utils.fromWei(
+                      //       product.price.toString(),
+                      //       "Ether"
+                      //     )}{" "}
+                      //     Eth
+                      //   </td>
+
+                      //   </td>
+                      // </tr>
+                    );
+                  }
+                })}
+              </div>
+
+              {/* </tbody>
+              </table> */}
             </div>
           </div>
         </div>
