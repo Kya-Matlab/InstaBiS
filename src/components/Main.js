@@ -1,47 +1,14 @@
-import Style from "./App.css";
+// import Style from "./App.css";
 import React, { Component } from "react";
-const TodoComponent = {
-  width: "300px",
-  margin: "30px auto",
-  color: "black",
-  minHeight: "200px",
-  boxSizing: "border-box",
-};
-const Header = {
-  padding: "10px 10px",
-  textAlign: "left",
-  color: "white",
-  fontSize: "16px",
-};
-const n = {
-  textAlign: "center",
-  width: "300px",
-  margin: "0px auto",
-};
-const m = {
-  textAlign: "center",
-  width: "125px",
-  margin: "10px auto",
-};
-const bg = {
-  background: "white",
-
-  /* Set up proportionate scaling */
-
-  top: 0,
-  left: 0,
-  color: "black",
-};
+import "../components/Main.css";
+import logo from "../Images/image1.png";
 class Main extends Component {
   render() {
     return (
-      <div className="content">
-        <div className="container">
+      <div className="addp-content">
+        <div className="addp-container">
           <div>
-            <br></br>
-            <h1 style={n}> Add Product </h1>
-            <br></br>
-            <br></br>
+            <h1 className="page-head"> Add Product </h1>
             <form
               onSubmit={(event) => {
                 event.preventDefault();
@@ -54,7 +21,8 @@ class Main extends Component {
                 this.props.createproduct(name, price);
               }}
             >
-              <div style={n}>
+              <div className="prod-name-div">
+                <label>Product Name</label>
                 <input
                   id="productName"
                   type="text"
@@ -66,8 +34,8 @@ class Main extends Component {
                   required
                 />
               </div>
-              <br></br>
-              <div style={n}>
+              <div className="prod-price-div">
+                <label>Product Price</label>
                 <input
                   id="productPrice"
                   type="text"
@@ -80,13 +48,26 @@ class Main extends Component {
                 />
               </div>
 
-              <div style={m}>
-                <button style={m} type="submit" className="btn btn-primary">
+              <div className="product-desc">
+                <label>About the Product</label>
+                <textarea type="text" className="form-control" placeholder="Explain about the product" required/>
+              </div>
+
+              <div className="product-desc">
+                <label>Upload Product Image</label>
+                <input type="file" className="form-control" placeholder="Explain about the product" required/>
+              </div>
+
+              <div>
+                <button type="submit" className="form-button">
                   Add Product
                 </button>
               </div>
             </form>
           </div>
+        </div>
+        <div className="vector-image">
+            <img src= {logo} alt = "price-img" />
         </div>
       </div>
     );
