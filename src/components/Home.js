@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import "../components/Home.css";
+import logo from "../Images/0x0-removebg-preview.png";
+
 const TodoComponent = {
   width: "800px",
   margin: "30px auto",
@@ -8,20 +11,17 @@ const TodoComponent = {
 };
 const Home = () => {
   return (
-    <div className="container">
-      <h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; WELCOME TO METAMARKET </h1>
-      <br></br>
-      <br></br>
-      <h5>
-        You can:- <br></br>
-        <br></br>
-        <ul>
-          <li>Sell your products </li>
-          <br></br>
-          <li>Buy other products</li>
-        </ul>
-      </h5>
-      <br></br>
+    <div className="home-container">
+      <div className="content-heading">
+        <div className="heading-div">
+          <h1>Welcome to Meta Market</h1>
+          <p>You can buy and sell your products here</p>
+          <button class="custom-btn btn-7"><span>Explore</span></button>
+        </div>
+      </div>
+      <div className="landing-logo">
+        <img src={logo} alt = "Landing-page-img" />
+      </div>
     </div>
   );
 };
