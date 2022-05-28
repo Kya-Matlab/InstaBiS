@@ -1,15 +1,9 @@
 require('dotenv').config()
-
-const express = require('express')
 require('express-async-errors')
-
+const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-
 const mongoose = require('mongoose')
-
-const Song = require('./models/Song')
-
 const app = express()
 
 app.use(cors())
