@@ -43,15 +43,17 @@ Students typically are more sensitive to prices, as they have lower disposable i
 
 
 ## Screenshots 📷
-<a href=""><img src="./assets/ss%20(7).jpeg" alt="Frame-9" border="0" width = "1000"></a>
-<a href=""><img src="./assets/ss%20(2).jpeg" alt="Frame-9" border="0" width = "1000"></a>
-<a href=""><img src="./assets/ss%20(1).jpeg" alt="Frame-9" border="0" width = "1000"></a>
-<a href=""><img src="./assets/ss%20(4).jpeg" alt="Frame-9" border="0" width = "1000"></a>
-<a href=""><img src="./assets/ss%20(6).jpeg" alt="Frame-9" border="0" width = "1000"></a>
-<a href=""><img src="./assets/ss%20(5).jpeg" alt="Frame-9" border="0" width = "1000"></a>
-<a href=""><img src="./assets/ss%20(3).jpeg" alt="Frame-9" border="0" width = "1000"></a>
+---
 
+<a href=""><img src="./assets/home.jpeg"  width = "1000"></a>
+<a href=""><img src="./assets/ss%20(2).jpeg"  width = "1000"></a>
+<a href=""><img src="./assets/ss%20(1).jpeg"  width = "1000"></a>
+<a href=""><img src="./assets/ss%20(4).jpeg"  width = "1000"></a>
+<a href=""><img src="./assets/ss%20(6).jpeg"  width = "1000"></a>
+<a href=""><img src="./assets/ss%20(5).jpeg"  width = "1000"></a>
+<a href=""><img src="./assets/ss%20(3).jpeg"  width = "1000"></a>
 
+---
 
 ## Tech Stack 🛠
 - Polygon
