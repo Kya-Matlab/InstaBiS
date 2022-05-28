@@ -94,8 +94,6 @@ tr:hover {
 .container::after {
   content: "";
   opacity: 0.8;
-  background: rgb(26, 31, 41) url("C:\Users\Rithik\Desktop\Blockchain1.jpg")
-    no-repeat fixed top;
   background-blend-mode: luminosity;
   /* also change the blend mode to what suits you, from darken, to other 
     many options as you deem fit*/

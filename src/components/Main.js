@@ -13,12 +13,14 @@ class Main extends Component {
               onSubmit={(event) => {
                 event.preventDefault();
                 const name = this.productName.value;
+                const desc = this.productDesc.value;
+                const img = this.productImg.files[0];
                 const Web3Utils = require("web3-utils");
                 const price = Web3Utils.toWei(
                   this.productPrice.value.toString(),
                   "Ether"
                 );
-                this.props.createproduct(name, price);
+                this.props.createproduct(name, price, desc, img);
               }}
             >
               <div className="prod-name-div">
@@ -50,12 +52,25 @@ class Main extends Component {
 
               <div className="product-desc">
                 <label>About the Product</label>
-                <textarea type="text" className="form-control" placeholder="Explain about the product" required/>
+                <textarea
+                  type="text"
+                  ref={(input) => {
+                    this.productDesc = input;
+                  }}
+                  className="form-control"
+                  placeholder="Explain about the product"
+                  required
+                />
               </div>
 
               <div className="product-desc">
                 <label>Upload Product Image</label>
-                <input type="file" className="form-control" placeholder="Explain about the product" required/>
+                <input
+                  type="file"
+                  className="form-control"
+                  placeholder="Explain about the product"
+                  required
+                />
               </div>
 
               <div>
@@ -67,7 +82,7 @@ class Main extends Component {
           </div>
         </div>
         <div className="vector-image">
-            <img src= {logo} alt = "price-img" />
+          <img src={logo} alt="price-img" />
         </div>
       </div>
     );

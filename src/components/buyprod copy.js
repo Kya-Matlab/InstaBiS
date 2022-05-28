@@ -12,7 +12,7 @@ const TodoComponent = {
 const Header = {
   padding: "10px 10px",
   textAlign: "left",
-  color: "white",
+  color: "black",
   fontSize: "16px",
 };
 const n = {
