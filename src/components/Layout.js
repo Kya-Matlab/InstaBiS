@@ -170,14 +170,19 @@ const Layout = () => {
     <>
       <div className="content">
         <nav>
-          <ul className="web-name">Small Biz</ul>
+          <ul className="web-name">
+            {" "}
+            <a class="active">
+              <Link
+                to="/Home"
+                style={{ color: "black", textDecoration: "none" }}
+              >
+                Small Biz
+              </Link>
+            </a>
+          </ul>
 
           <ul class="ul">
-            <li class="li">
-              <a class="active">
-                <Link to="/Home">Home</Link>
-              </a>
-            </li>
             {isConnected ? (
               <Fragment>
                 <li class="li">
@@ -193,6 +198,11 @@ const Layout = () => {
                 <li class="li">
                   <a class="active">
                     <Link to="/N2">Your Products</Link>
+                  </a>
+                </li>
+                <li class="li">
+                  <a class="active">
+                    <Link to="/profile">My Profile</Link>
                   </a>
                 </li>
               </Fragment>
