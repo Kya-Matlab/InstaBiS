@@ -1,7 +1,7 @@
 // import Style from "./App.css";
 import React, { Component } from "react";
 import "../components/Main.css";
-import logo from "../Images/image1.png";
+import logo from "../Images/add.svg";
 import { create } from "ipfs-http-client";
 
 const client = create("https://ipfs.infura.io:5001/api/v0");
@@ -94,7 +94,7 @@ class Main extends Component {
           </div>
         </div>
         <div className="vector-image">
-          <img src={logo} alt="price-img" />
+          <img src={logo} style={{ height: "60vh" }} alt="price-img" />
         </div>
       </div>
     );

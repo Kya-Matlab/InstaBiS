@@ -9,6 +9,7 @@ import {
   statusIconDisconnected,
   rowStyle,
 } from "../styles/styles";
+import logo from "../Images/logo.png";
 // import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import "../components/layout.css";
 const TodoComponent = {
@@ -177,7 +178,12 @@ const Layout = () => {
                 to="/Home"
                 style={{ color: "black", textDecoration: "none" }}
               >
-                Small Biz
+                <img
+                  style={{ height: "50px" }}
+                  src={logo}
+                  alt="..."
+                  srcset=""
+                />
               </Link>
             </a>
           </ul>

@@ -1,6 +1,6 @@
 // import Style from "./App.css";
 import React, { Component } from "react";
-import logo from "../Images/image1.png";
+import logo from "../Images/profile.svg";
 
 class Profile extends Component {
   render() {
@@ -64,7 +64,7 @@ class Profile extends Component {
           </div>
         </div>
         <div className="vector-image">
-          <img src={logo} alt="price-img" />
+          <img src={logo} style={{ height: "50vh" }} alt="price-img" />
         </div>
       </div>
     );

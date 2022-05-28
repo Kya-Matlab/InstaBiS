@@ -3,6 +3,8 @@ import { Outlet, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Route, Redirect } from "react-router";
 import Web3 from "web3";
+import "../components/Home.css";
+
 import Style from "./App.css";
 import { useNavigate } from "react-router-dom";
 import mark from "../abis/market.json";
@@ -17,7 +19,7 @@ const TodoComponent = {
 };
 const Header = {
   padding: "px 10px",
-  textAlign: "left",
+  textAlign: "center",
   color: "white",
   fontSize: "16px",
 };
@@ -97,7 +99,9 @@ class root extends Component {
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Owner</th>
-                    <th scope="col"></th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Image</th>
+                    <th> Buy </th>
                   </tr>
                 </thead>
                 <tbody id="productList">
@@ -108,19 +112,28 @@ class root extends Component {
                     ) {
                       return (
                         <tr key={key}>
-                          <th scope="row">{product.id.toString()}</th>
+                          <th className="product-table" scope="row">
+                            {product.id.toString()}
+                          </th>
                           <td>{product.name}</td>
                           <td>
                             {window.web3.utils.fromWei(
                               product.price.toString(),
                               "Ether"
                             )}{" "}
-                            Eth
+                            ETH
                           </td>
-                          <td>{product.owner} </td>
+                          <td>{product.owner}</td>
+                          <td>{product.desc}</td>
+                          <img
+                            src={product.img}
+                            style={{ height: "5rem" }}
+                            alt=""
+                            srcset=""
+                            className="product-buy-img"
+                          />
                           <td>
-                            {product.purchased !== true &&
-                            product.owner != this.state.account ? (
+                            {!product.purchased ? (
                               <button
                                 name={product.id}
                                 value={product.price}
@@ -130,11 +143,10 @@ class root extends Component {
                                     event.target.value
                                   );
                                 }}
+                                className="product-buy-button"
                               >
                                 Buy
                               </button>
-                            ) : product.owner == this.state.account ? (
-                              <td>Your Product</td>
                             ) : (
                               <td>Sold out</td>
                             )}

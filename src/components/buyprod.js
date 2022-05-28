@@ -1,6 +1,7 @@
 import "./App.css";
 import Web3 from "web3";
 import mark from "../abis/market.json";
+import { books } from "../utils/books";
 import React, { Component } from "react";
 const TodoComponent = {
   width: "300px",
@@ -67,11 +68,17 @@ class Main extends Component {
     return (
       <div className="content">
         <div className="container">
-          <div>
-            <div style={Header}>
-              <h2 className="available-heading">Available Products</h2>
-              <div style={{ display: "flex" }}>
-                {/* <table className="table" style={Header}>
+          <div style={Header}>
+            <h2 className="available-heading">Available Products</h2>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                width: "95vw",
+                overflowX: "hidden",
+              }}
+            >
+              {/* <table className="table" style={Header}>
                 <thead>
                   <tr>
                     <th scope="col"># Product Id</th>
@@ -82,74 +89,92 @@ class Main extends Component {
                   </tr>
                 </thead>
                 <tbody id="productList"> */}
-                {this.props.products.map((product, key) => {
-                  if (
-                    product.purchased !== true &&
-                    product.owner != this.state.account
-                  ) {
-                    return (
-                      <div className="card">
-                        <img
-                          src={product.img}
-                          style={{ height: "200px" }}
-                          alt=".."
-                        />
-                        <div className="card-body">
-                          <h2>{product.name}</h2>
-                          <p>{product.desc}</p>
-                          <p style={{ color: "black", fontSize: "12px" }}>
-                            {" "}
-                            Seller : {product.owner}
-                          </p>
-                          <p>
-                            Price:{" "}
-                            {window.web3.utils.fromWei(
-                              product.price.toString(),
-                              "Ether"
-                            )}{" "}
-                            ETH
-                          </p>
-                          <p style={{ textAlign: "center" }}>
-                            {!product.purchased ? (
-                              <button
-                                name={product.id}
-                                value={product.price}
-                                onClick={(event) => {
-                                  this.props.purchaseproduct(
-                                    event.target.name,
-                                    event.target.value
-                                  );
-                                }}
-                                className = "product-buy-button"
-                              >
-                                Buy
-                              </button>
-                            ) : (
-                              <td>Sold out</td>
-                            )}
-                          </p>
-                        </div>
+              {this.props.products.map((product, key) => {
+                if (
+                  product.purchased !== true &&
+                  product.owner != this.state.account
+                ) {
+                  return (
+                    <div className="card" style={{ margin: "30px 30px" }}>
+                      <img
+                        src={product.img}
+                        style={{ height: "200px" }}
+                        alt=".."
+                      />
+                      <div className="card-body">
+                        <h2>{product.name}</h2>
+                        <p>{product.desc}</p>
+                        <p style={{ color: "black", fontSize: "12px" }}>
+                          {" "}
+                          Seller : {product.owner}
+                        </p>
+                        <p>
+                          Price:{" "}
+                          {window.web3.utils.fromWei(
+                            product.price.toString(),
+                            "Ether"
+                          )}{" "}
+                          ETH
+                        </p>
+                        <p style={{ textAlign: "center" }}>
+                          {!product.purchased ? (
+                            <button
+                              name={product.id}
+                              value={product.price}
+                              onClick={(event) => {
+                                this.props.purchaseproduct(
+                                  event.target.name,
+                                  event.target.value
+                                );
+                              }}
+                              className="product-buy-button"
+                            >
+                              Buy
+                            </button>
+                          ) : (
+                            <td>Sold out</td>
+                          )}
+                        </p>
                       </div>
-                      // <tr key={key}>
-                      //   <th scope="row">{product.id.toString()}</th>
-                      //   <td>{product.name}</td>
-                      //   <td>
-                      //     {window.web3.utils.fromWei(
-                      //       product.price.toString(),
-                      //       "Ether"
-                      //     )}{" "}
-                      //     Eth
-                      //   </td>
+                    </div>
 
-                      //   </td>
-                      // </tr>
-                    );
-                  }
-                })}
-              </div>
+                    // <tr key={key}>
+                    //   <th scope="row">{product.id.toString()}</th>
+                    //   <td>{product.name}</td>
+                    //   <td>
+                    //     {window.web3.utils.fromWei(
+                    //       product.price.toString(),
+                    //       "Ether"
+                    //     )}{" "}
+                    //     Eth
+                    //   </td>
 
-              {/* </tbody>
-              </table> */}
+                    //   </td>
+                    // </tr>
+                  );
+                }
+              })}
+            </div>
+          </div>
+          <div>
+            <h2 className="available-heading"> Reccomended Products: </h2>
+            <div style={{ display: "flex" }}>
+              {books.map((book, key) => {
+                return (
+                  <div className="card">
+                    <div className="card-body">
+                      <img
+                        src={book.link}
+                        style={{ height: "100px" }}
+                        alt=".."
+                      />
+                    </div>
+                    <h2 style={{ fontSize: "14px", padding: "10px" }}>
+                      {book.title}
+                    </h2>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
