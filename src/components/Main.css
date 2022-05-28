@@ -1,39 +1,40 @@
-*{
-    padding: 0;
-    margin: 0;
-    /* border: 1px solid red; */
+* {
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid red; */
 }
 
 .addp-content {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .addp-container {
-    width: 50%;
+  width: 50%;
 }
 
 .vector-image {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.product-desc{
-    display: block;
+.product-desc {
+  display: block;
 }
 
-.addp-container div{
-    margin: 2rem 1rem;
+.addp-container div {
+  margin: 2rem 1rem;
 }
 
 .page-head {
-    font-family: Montserrat;
-    margin: 0 1rem;
+  font-family: Montserrat;
+  margin: 0 1rem;
 }
 
 button {
-    padding: 2rem;
-    margin: 2rem;
+  padding: 10px;
+  margin: 2rem;
+  margin-top: 20px;
 }

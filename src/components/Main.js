@@ -68,6 +68,9 @@ class Main extends Component {
                 <input
                   type="file"
                   className="form-control"
+                  ref={(input) => {
+                    this.productImg = input;
+                  }}
                   placeholder="Explain about the product"
                   required
                 />
