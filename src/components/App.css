@@ -128,3 +128,30 @@ table {
 .card-body {
   padding: 1.2em;
 }
+
+.product-buy-button {
+  padding: 0.5rem 3rem;
+  margin-top: 2rem;
+  outline: none;
+  border: 2px solid #6772e5;
+  transition: 0.3s;
+  background-color: #6772e5;
+  font-family: Montserrat;
+  font-weight: bold;
+  color: white;
+}
+
+.product-buy-button:hover {
+  transition: 0.3s;
+  background-color: white;
+  color: #6772e5;
+  /* transform: scale(1.1); */
+  outline: none;
+}
+
+.available-heading {
+  margin-left: 1rem;
+  font-family: Montserrat;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}

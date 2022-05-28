@@ -69,7 +69,7 @@ class Main extends Component {
         <div className="container">
           <div>
             <div style={Header}>
-              <h2>Available Products</h2>
+              <h2 className="available-heading">Available Products</h2>
               <div style={{ display: "flex" }}>
                 {/* <table className="table" style={Header}>
                 <thead>
@@ -120,6 +120,7 @@ class Main extends Component {
                                     event.target.value
                                   );
                                 }}
+                                className = "product-buy-button"
                               >
                                 Buy
                               </button>

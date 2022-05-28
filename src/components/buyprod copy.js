@@ -1,6 +1,7 @@
 import Style from "./App.css";
 import React, { Component } from "react";
 import Web3 from "web3";
+import "../components/Home.css";
 import mark from "../abis/market.json";
 const TodoComponent = {
   width: "300px",
@@ -14,6 +15,7 @@ const Header = {
   textAlign: "left",
   color: "black",
   fontSize: "16px",
+  width: "100%"
 };
 const n = {
   textAlign: "center",
@@ -25,9 +27,7 @@ const m = {
 };
 const bg = {
   background: "black",
-
   /* Set up proportionate scaling */
-
   top: 0,
   left: 0,
   color: "black",
@@ -65,20 +65,20 @@ class Main extends Component {
   }
   render() {
     return (
-      <div className="content1">
-        <div className="container">
+      <div className="product-content1">
+        <div className="product-container">
           <div>
             <div style={Header}>
               <h2>Your Products</h2>
               <table className="table" style={Header}>
                 <thead>
-                  <tr>
-                    <th scope="col"># Product Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Owner</th>
-                    <th scope="col">Desc</th>
-                    <th scope="col">Img</th>
+                  <tr className="product-tr">
+                    <th className="product-table" scope="col"># Product Id</th>
+                    <th className="product-table" scope="col">Name</th>
+                    <th className="product-table" scope="col">Price</th>
+                    <th className="product-table" scope="col">Owner</th>
+                    <th className="product-table" scope="col">Desc</th>
+                    <th className="product-table image-table" scope="col">Img</th>
                   </tr>
                 </thead>
                 <tbody id="productList">
@@ -86,22 +86,23 @@ class Main extends Component {
                     if (product.owner === this.state.account) {
                       return (
                         <tr key={key}>
-                          <th scope="row">{product.id.toString()}</th>
+                          <th className="product-table" scope="row">{product.id.toString()}</th>
                           <td>{product.name}</td>
                           <td>
                             {window.web3.utils.fromWei(
                               product.price.toString(),
                               "Ether"
                             )}{" "}
-                            Eth
+                            ETH
                           </td>
                           <td>{product.owner}</td>
                           <td>{product.desc}</td>
                           <img
                             src={product.img}
-                            style={{ height: "80px" }}
+                            style={{ height: "15rem" }}
                             alt=""
                             srcset=""
+                            className="product-buy-img"
                           />
                         </tr>
                       );
