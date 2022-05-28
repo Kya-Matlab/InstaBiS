@@ -81,6 +81,7 @@ class root extends Component {
             <input
               type="text"
               onChange={this.name}
+              className="form-control"
               id="name"
               placeholder="Product Id or Name"
             ></input>
