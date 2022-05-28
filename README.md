@@ -1,4 +1,4 @@
-# InstaBiz
+# InstaBi$
 ---
 ## Problem Statement
 ---
