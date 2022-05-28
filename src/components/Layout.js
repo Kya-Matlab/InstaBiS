@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { useEffect, useState } from "react";
 import {
   containerStyle,
@@ -178,21 +178,28 @@ const Layout = () => {
                 <Link to="/Home">Home</Link>
               </a>
             </li>
-            <li class="li">
-              <a class="active">
-                <Link to="/addp">Add Products</Link>
-              </a>
-            </li>
-            <li class="li">
-              <a class="active">
-                <Link to="/N">Buy Products</Link>
-              </a>
-            </li>
-            <li class="li">
-              <a class="active">
-                <Link to="/N2">Your Products</Link>
-              </a>
-            </li>
+            {isConnected ? (
+              <Fragment>
+                <li class="li">
+                  <a class="active">
+                    <Link to="/addp">Add Products</Link>
+                  </a>
+                </li>
+                <li class="li">
+                  <a class="active">
+                    <Link to="/N">Buy Products</Link>
+                  </a>
+                </li>
+                <li class="li">
+                  <a class="active">
+                    <Link to="/N2">Your Products</Link>
+                  </a>
+                </li>
+              </Fragment>
+            ) : (
+              <p></p>
+            )}
+
             <li class="li search-li">
               <a class="active search-active">
                 <Link to="/search">Search</Link>
