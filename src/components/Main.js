@@ -2,6 +2,9 @@
 import React, { Component } from "react";
 import "../components/Main.css";
 import logo from "../Images/image1.png";
+import { create } from "ipfs-http-client";
+
+const client = create("https://ipfs.infura.io:5001/api/v0");
 class Main extends Component {
   render() {
     return (
@@ -10,17 +13,25 @@ class Main extends Component {
           <div>
             <h1 className="page-head"> Add Product </h1>
             <form
-              onSubmit={(event) => {
+              onSubmit={async (event) => {
                 event.preventDefault();
-                const name = this.productName.value;
-                const desc = this.productDesc.value;
-                const img = this.productImg.files[0];
-                const Web3Utils = require("web3-utils");
-                const price = Web3Utils.toWei(
-                  this.productPrice.value.toString(),
-                  "Ether"
-                );
-                this.props.createproduct(name, price, desc, img);
+                const file = this.productImg.files[0];
+                try {
+                  const added = await client.add(file);
+                  const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+                  const img = url;
+                  const name = this.productName.value;
+                  const desc = this.productDesc.value;
+                  const Web3Utils = require("web3-utils");
+                  const price = Web3Utils.toWei(
+                    this.productPrice.value.toString(),
+                    "Ether"
+                  );
+                  console.log(img);
+                  this.props.createproduct(name, price, desc, img);
+                } catch (error) {
+                  console.log("Error uploading file: ", error);
+                }
               }}
             >
               <div className="prod-name-div">
