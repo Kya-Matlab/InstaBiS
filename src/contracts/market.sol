@@ -6,6 +6,8 @@ contract market{
            uint id;
            string name;
            uint price;
+           string desc;
+           string img;
            address payable owner;
            bool purchased;
        }
@@ -13,6 +15,8 @@ contract market{
            uint id,
            string name,
            uint price,
+            string desc,
+           string img,
            address payable owner,
            bool purchased);
            event Productpurchased(
@@ -22,12 +26,12 @@ contract market{
            address payable owner,
            bool purchased);
 
-       function createproduct(string memory _name,uint _price)public{
+       function createproduct(string memory _name,uint _price,string memory _desc,string memory _img)public{
            require(bytes(_name).length > 0);
            require(_price > 0);
            productcount++;
-           products[productcount]=product(productcount,_name,_price,msg.sender,false);
-           emit Productcreated(productcount,_name,_price,msg.sender,false);
+           products[productcount]=product(productcount,_name,_price,_desc,_img,msg.sender,false);
+           emit Productcreated(productcount,_name,_price,_desc,_img,msg.sender,false);
        }
        function purchase(uint _id) public payable{
            product memory _product=products[_id];

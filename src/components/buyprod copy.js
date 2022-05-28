@@ -77,6 +77,8 @@ class Main extends Component {
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Owner</th>
+                    <th scope="col">Desc</th>
+                    <th scope="col">Img</th>
                   </tr>
                 </thead>
                 <tbody id="productList">
@@ -94,6 +96,13 @@ class Main extends Component {
                             Eth
                           </td>
                           <td>{product.owner}</td>
+                          <td>{product.desc}</td>
+                          <img
+                            src={product.img}
+                            style={{ height: "80px" }}
+                            alt=""
+                            srcset=""
+                          />
                         </tr>
                       );
                     }

@@ -16,22 +16,20 @@ class Main extends Component {
               onSubmit={async (event) => {
                 event.preventDefault();
                 const file = this.productImg.files[0];
-                try {
-                  const added = await client.add(file);
-                  const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-                  const img = url;
-                  const name = this.productName.value;
-                  const desc = this.productDesc.value;
-                  const Web3Utils = require("web3-utils");
-                  const price = Web3Utils.toWei(
-                    this.productPrice.value.toString(),
-                    "Ether"
-                  );
-                  console.log(img);
-                  this.props.createproduct(name, price, desc, img);
-                } catch (error) {
-                  console.log("Error uploading file: ", error);
-                }
+
+                const added = await client.add(file);
+                const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+                const img = url;
+                const name = this.productName.value;
+                const desc = this.productDesc.value;
+                const Web3Utils = require("web3-utils");
+                const price = Web3Utils.toWei(
+                  this.productPrice.value.toString(),
+                  "Ether"
+                );
+                console.log(desc);
+                console.log(img);
+                this.props.createproduct(name, price, desc, img);
               }}
             >
               <div className="prod-name-div">
