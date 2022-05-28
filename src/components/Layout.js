@@ -1,8 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import React, { Component } from "react";
+// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import "../components/layout.css";
-import Web3 from "web3";
-
 const TodoComponent = {
   width: "800px",
   margin: "30px auto",
@@ -16,7 +15,13 @@ const Layout = () => {
     <>
       <div className="content">
         <nav>
+
+          <ul className="web-name">
+            Small Biz
+          </ul>
+
           <ul class="ul">
+
             <li class="li">
               <a class="active">
                 <Link to="/Home">Home</Link>
@@ -37,9 +42,11 @@ const Layout = () => {
                 <Link to="/N2">Your Products</Link>
               </a>
             </li>
-            <li class="li">
-              <a class="active">
-                <Link to="/search">Search</Link>
+            <li class="li search-li">
+              <a class="active search-active">
+                <Link to="/search">
+                    Search
+                </Link>
               </a>
             </li>
           </ul>
