@@ -17,7 +17,7 @@ const Home = () => {
         <div className="heading-div">
           <h1 className="product-heading">Welcome to Meta Market</h1>
           <p>You can buy and sell your products here</p>
-          <button class="custom-btn btn-7"><span>Explore</span></button>
+          <button class="custom-btn btn-7"><span>Buy Products</span></button>
         </div>
       </div>
       <div className="landing-logo">
