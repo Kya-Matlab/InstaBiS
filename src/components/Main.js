@@ -86,7 +86,7 @@ class Main extends Component {
               </div>
 
               <div>
-                <button type="submit" className="form-button">
+                <button type="submit" className="form-button add-product-button">
                   Add Product
                 </button>
               </div>

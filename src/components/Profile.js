@@ -1,6 +1,7 @@
 // import Style from "./App.css";
 import React, { Component } from "react";
 import logo from "../Images/profile.svg";
+import "../components/Main.css";
 
 class Profile extends Component {
   render() {
@@ -22,7 +23,7 @@ class Profile extends Component {
               </div>
               <div className="prod-price-div">
                 <label>Type</label> <br />
-                <select name="type" id="">
+                <select className="profile-select" name="type" id="">
                   <option value="Buyer">Buyer</option>
                   <option value="Seller">Seller</option>
                 </select>
@@ -56,7 +57,7 @@ class Profile extends Component {
                 />
               </div>
               <div>
-                <button type="submit" className="form-button">
+                <button type="submit" className="form-button add-product-button">
                   Update Profile
                 </button>
               </div>

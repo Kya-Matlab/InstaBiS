@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Web3 from "web3";
 import "../components/Home.css";
 import mark from "../abis/market.json";
+
 const TodoComponent = {
   width: "300px",
   margin: "30px auto",
@@ -77,7 +78,7 @@ class Main extends Component {
                     <th className="product-table" scope="col">Name</th>
                     <th className="product-table" scope="col">Price</th>
                     <th className="product-table" scope="col">Owner</th>
-                    <th className="product-table" scope="col">Desc</th>
+                    <th className="product-table" scope="col">Rating</th>
                     <th className="product-table image-table" scope="col">Img</th>
                   </tr>
                 </thead>

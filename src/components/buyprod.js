@@ -100,6 +100,7 @@ class Main extends Component {
                         src={product.img}
                         style={{ height: "200px" }}
                         alt=".."
+                        className="your-image"
                       />
                       <div className="card-body">
                         <h2>{product.name}</h2>

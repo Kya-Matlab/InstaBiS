@@ -73,8 +73,9 @@ class root extends Component {
   }
   render() {
     return (
-      <div className="content">
-        <div className="container">
+      <div className="main-search-div">
+      <div className="content search-content">
+        {/* <div className="container search-container"> */}
           <h1 style={n}> Search </h1>
           <br></br>
           <div style={m}>
@@ -94,8 +95,8 @@ class root extends Component {
             <div style={Header}>
               <h2>Products</h2>
               <table className="table" style={Header}>
-                <thead>
-                  <tr>
+                <thead className="search-thead">
+                  <tr className="search-tr">
                     <th scope="col"># Product Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
@@ -105,27 +106,28 @@ class root extends Component {
                     <th> Buy </th>
                   </tr>
                 </thead>
-                <tbody id="productList">
+                <tbody className="search-tbody" id="productList">
                   {this.props.products.map((product, key) => {
                     if (
                       this.state.N == product.name ||
                       this.state.N == product.id + ""
                     ) {
                       return (
-                        <tr key={key}>
+                        <tr className="search-tr" key={key}>
                           <th className="product-table" scope="row">
                             {product.id.toString()}
                           </th>
-                          <td>{product.name}</td>
-                          <td>
+                          <td className="search-td">{product.name}</td>
+                          <td className="search-td">
                             {window.web3.utils.fromWei(
                               product.price.toString(),
                               "Ether"
                             )}{" "}
                             ETH
                           </td>
-                          <td>{product.owner}</td>
-                          <td>{product.desc}</td>
+                          <td className="search-td">{product.owner}</td>
+                          <td className="search-td">{product.desc}</td>
+                          <div className="search-div-img">
                           <img
                             src={product.img}
                             style={{ height: "5rem" }}
@@ -133,7 +135,8 @@ class root extends Component {
                             srcset=""
                             className="product-buy-img"
                           />
-                          <td>
+                          </div>
+                          <td className="search-td">
                             {!product.purchased ? (
                               <button
                                 name={product.id}
@@ -149,7 +152,7 @@ class root extends Component {
                                 Buy
                               </button>
                             ) : (
-                              <td>Sold out</td>
+                              <td className="search-td">Sold out</td>
                             )}
                           </td>
                         </tr>
@@ -160,7 +163,8 @@ class root extends Component {
               </table>
             </div>
           </div>
-        </div>
+        {/* </div> */}
+      </div>
       </div>
     );
   }
