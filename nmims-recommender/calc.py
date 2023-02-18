@@ -38,10 +38,10 @@ def setup(data):
     """    
     cols= user_book_matrix.columns
     # converted into a dataframe with cols  as colums and values as the ratings and index as user id
-    user_ratingsaman = pd.DataFrame(data, index=[user_id], columns=cols)
-    user_ratingsaman
+    user_ratingstemp = pd.DataFrame(data, index=[user_id], columns=cols)
+    user_ratingstemp
     # append this to our user_book_matrix dataframe
-    user_book_matrix = user_book_matrix.append(user_ratingsaman)
+    user_book_matrix = user_book_matrix.append(user_ratingstemp)
     # ps we dont need the user if moving forward
 
     user=user = int(user_id)
